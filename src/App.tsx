@@ -35,7 +35,7 @@ function App() {
           alt="Dark Mode Toggle"
           onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}
         />
-        <p className="advice-count">Advice # {count}</p>
+        <Message count={count} />
         <p className="advice-text">&ldquo;{advice}&rdquo;</p>
         <div
           className="die-container"
@@ -57,6 +57,10 @@ function App() {
       </StyledMain>
     </ThemeProvider>
   );
+}
+
+function Message(props: { count: number }) {
+  return <p className="advice-count">Advice # {props.count}</p>;
 }
 
 const StyledMain = styled.main`

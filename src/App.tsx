@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react';
 import die from './assets/images/icon-dice.svg';
 import dividerMobile from './assets/images/pattern-divider-mobile.svg';
+import dividerDesktop from './assets/images/pattern-divider-desktop.svg';
+
 import styled, { ThemeProvider } from 'styled-components';
 import { lightTheme, darkTheme } from './Theme.ts';
 import GlobalStyle from './GlobalStyle.ts';
@@ -51,7 +53,7 @@ function App() {
         </div>
         <img
           className="divider"
-          src={dividerMobile}
+          // src={dividerMobile}
           alt="Divider"
         />
       </StyledMain>
@@ -104,6 +106,10 @@ const StyledMain = styled.main`
     transform: translate(-50%, 50%);
     cursor: pointer;
 
+    &:hover {
+      box-shadow: 0 0 40px ${(props) => props.theme.accentColor};
+    }
+
     .die-image {
       width: 2.4rem;
       height: 2.4rem;
@@ -112,6 +118,28 @@ const StyledMain = styled.main`
 
   .divider {
     margin: 2.4rem 0;
+    content: url(${dividerMobile});
+  }
+
+  @media all and (min-width: 1000px) {
+    max-width: 54rem;
+    padding: 4.8rem;
+    border-radius: 1.5rem;
+
+    .advice-count {
+      font-size: 1.3rem;
+      letter-spacing: 4.086px;
+    }
+
+    .advice-text {
+      font-size: 2.8rem;
+      letter-spacing: -0.3px;
+    }
+
+    .divider {
+      content: url(${dividerDesktop});
+      margin: 4rem 0;
+    }
   }
 `;
 

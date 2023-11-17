@@ -26,7 +26,7 @@ Users should be able to:
 
 ### Links
 
-- Live Demo: [https://github.com/aaronkagan/advice-generator](https://github.com/aaronkagan/advice-generator)
+- Live Demo: [https://aaronkagandev-advice-generator.netlify.app/](https://aaronkagandev-advice-generator.netlify.app/)
 
 ### Screenshot
 

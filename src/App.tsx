@@ -4,11 +4,13 @@ import dividerMobile from './assets/images/pattern-divider-mobile.svg';
 import styled, { ThemeProvider } from 'styled-components';
 import { lightTheme, darkTheme } from './Theme.ts';
 import GlobalStyle from './GlobalStyle.ts';
+import sun from './assets/images/icon-sun.svg';
+import moon from './assets/images/icon-moon.svg';
 
 function App() {
   const [count, setCount] = useState(0);
   const [advice, setAdvice] = useState('');
-  const [theme, setTheme] = useState('dark');
+  const [theme, setTheme] = useState('light');
 
   const getAdvice = async () => {
     const res = await fetch('https://api.adviceslip.com/advice');
@@ -25,6 +27,14 @@ function App() {
     <ThemeProvider theme={theme === 'light' ? lightTheme : darkTheme}>
       <GlobalStyle />
       <StyledMain>
+        <img
+          className="toggle-dark"
+          role="button"
+          aria-label="Toggle Dark Mode"
+          src={theme === 'light' ? moon : sun}
+          alt="Dark Mode Toggle"
+          onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}
+        />
         <p className="advice-count">Advice # {count}</p>
         <p className="advice-text">&ldquo;{advice}&rdquo;</p>
         <div
@@ -56,6 +66,12 @@ const StyledMain = styled.main`
   border-radius: 1rem;
   text-align: center;
   position: relative;
+
+  .toggle-dark {
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+  }
 
   .advice-count {
     color: ${(props) => props.theme.accentColor};

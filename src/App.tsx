@@ -52,7 +52,13 @@ function App() {
           />
         </div>
         <img
-          className="divider"
+          src={dividerMobile}
+          className="divider mobile"
+          alt="Divider"
+        />
+        <img
+          src={dividerDesktop}
+          className="divider desktop"
           alt="Divider"
         />
       </StyledMain>
@@ -115,9 +121,12 @@ const StyledMain = styled.main`
     }
   }
 
-  .divider {
+  .divider.mobile {
     margin: 2.4rem 0;
-    content: url(${dividerMobile});
+  }
+
+  .divider.desktop {
+    display: none;
   }
 
   @media all and (min-width: 1000px) {
@@ -135,8 +144,12 @@ const StyledMain = styled.main`
       letter-spacing: -0.3px;
     }
 
-    .divider {
-      content: url(${dividerDesktop});
+    .divider.mobile {
+      display: none;
+    }
+
+    .divider.desktop {
+      display: block;
       margin: 4rem 0;
     }
   }

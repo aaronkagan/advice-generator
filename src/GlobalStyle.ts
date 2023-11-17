@@ -14,6 +14,7 @@ const GlobalStyle = createGlobalStyle`
   body {
     font-family: 'Manrope', sans-serif;
     font-weight: 800;
+    background-color: ${(props) => props.theme.bodyBgColor};
   }
 `;
 

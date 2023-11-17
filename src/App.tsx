@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import die from './assets/images/icon-dice.svg';
-import dividerMobile from './assets/images/pattern-divider-mobile.svg';
-import dividerDesktop from './assets/images/pattern-divider-desktop.svg';
+import dividerMobile from '/src/assets/images/pattern-divider-mobile.svg';
+import dividerDesktop from '/src/assets/images/pattern-divider-desktop.svg';
 
 import styled, { ThemeProvider } from 'styled-components';
 import { lightTheme, darkTheme } from './Theme.ts';
@@ -53,7 +53,7 @@ function App() {
         </div>
         <img
           className="divider"
-          src={dividerMobile}
+          // src={dividerMobile}
           alt="Divider"
         />
       </StyledMain>

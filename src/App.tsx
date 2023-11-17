@@ -10,7 +10,7 @@ import moon from './assets/images/icon-moon.svg';
 function App() {
   const [count, setCount] = useState(0);
   const [advice, setAdvice] = useState('');
-  const [theme, setTheme] = useState('light');
+  const [theme, setTheme] = useState('dark');
 
   const getAdvice = async () => {
     const res = await fetch('https://api.adviceslip.com/advice');

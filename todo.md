@@ -1,2 +1,1 @@
-Do Desktop Design
-Write readme
+Switch image responsiveness to use picture/source/srcset.

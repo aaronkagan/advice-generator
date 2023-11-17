@@ -71,6 +71,7 @@ const StyledMain = styled.main`
     position: absolute;
     right: 1rem;
     top: 1rem;
+    cursor: pointer;
   }
 
   .advice-count {

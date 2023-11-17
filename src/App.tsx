@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import die from './assets/images/icon-dice.svg';
+import dividerMobile from './assets/images/pattern-divider-mobile.svg';
 import styled, { ThemeProvider } from 'styled-components';
 import { lightTheme, darkTheme } from './Theme.ts';
 import GlobalStyle from './GlobalStyle.ts';
@@ -25,17 +26,24 @@ function App() {
       <GlobalStyle />
       <StyledMain>
         <p className="advice-count">Advice # {count}</p>
-        <p className="advice-text">{advice}</p>
-        <div className="die-container">
+        <p className="advice-text">&ldquo;{advice}&rdquo;</p>
+        <div
+          className="die-container"
+          onClick={getAdvice}
+        >
           <img
             className="die-image"
-            onClick={getAdvice}
             role="button"
             aria-label="Get Advice"
             src={die}
             alt="Dice Icon"
           />
         </div>
+        <img
+          className="divider"
+          src={dividerMobile}
+          alt="Divider"
+        />
       </StyledMain>
     </ThemeProvider>
   );
@@ -43,20 +51,46 @@ function App() {
 
 const StyledMain = styled.main`
   background-color: ${(props) => props.theme.cardBgColor};
+  max-width: 34.3rem;
+  padding: 4rem 2.4rem;
+  border-radius: 1rem;
+  text-align: center;
+  position: relative;
 
   .advice-count {
     color: ${(props) => props.theme.accentColor};
+    font-size: 1.1rem;
+    letter-spacing: 3.457px;
+    margin-bottom: 2.4rem;
   }
 
   .advice-text {
     color: ${(props) => props.theme.mainTextColor};
+    font-size: 2.4rem;
+    letter-spacing: -0.257px;
   }
 
   .die-container {
     background-color: ${(props) => props.theme.accentColor};
+    width: 6.4rem;
+    height: 6.4rem;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translate(-50%, 50%);
+    cursor: pointer;
+
+    .die-image {
+      width: 2.4rem;
+      height: 2.4rem;
+    }
   }
 
-  .die-image {
+  .divider {
+    margin: 2.4rem 0;
   }
 `;
 

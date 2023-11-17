@@ -15,7 +15,11 @@ const GlobalStyle = createGlobalStyle`
     font-family: 'Manrope', sans-serif;
     font-weight: 800;
     background-color: ${(props) => props.theme.bodyBgColor};
-  }
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    }
 `;
 
 export default GlobalStyle;

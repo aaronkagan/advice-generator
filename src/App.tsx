@@ -53,7 +53,6 @@ function App() {
         </div>
         <img
           className="divider"
-          // src={dividerMobile}
           alt="Divider"
         />
       </StyledMain>
